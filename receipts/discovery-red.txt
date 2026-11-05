@@ -1,0 +1,20 @@
+test_normal_discovery_declares_isolated_streaming_provider (test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider) ... FAIL
+
+======================================================================
+FAIL: test_normal_discovery_declares_isolated_streaming_provider (test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_provider.py", line 47, in test_normal_discovery_declares_isolated_streaming_provider
+    self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+    assert p is not None, 'ordinary provider discovery did not load copilot-fusion'
+           ^^^^^^^^^^^^^
+AssertionError: ordinary provider discovery did not load copilot-fusion
+
+
+----------------------------------------------------------------------
+Ran 1 test in 1.463s
+
+FAILED (failures=1)

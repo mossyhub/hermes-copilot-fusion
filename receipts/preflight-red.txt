@@ -1,0 +1,21 @@
+test_external_process_preflight_matches_bundled_bridge_and_cli (test_provider.DiscoveryTests.test_external_process_preflight_matches_bundled_bridge_and_cli) ... FAIL
+test_normal_discovery_declares_isolated_streaming_provider (test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider) ... ok
+
+======================================================================
+FAIL: test_external_process_preflight_matches_bundled_bridge_and_cli (test_provider.DiscoveryTests.test_external_process_preflight_matches_bundled_bridge_and_cli)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_provider.py", line 49, in test_external_process_preflight_matches_bundled_bridge_and_cli
+    self.assertEqual(0,result.returncode,result.stdout+result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : Traceback (most recent call last):
+  File "<string>", line 10, in <module>
+    assert c['args'][1]==str(Path(p.process_command).with_name('copilot')), 'bundled CLI must not fall through to PATH'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: bundled CLI must not fall through to PATH
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.621s
+
+FAILED (failures=1)

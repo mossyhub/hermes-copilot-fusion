@@ -1,0 +1,4 @@
+name: copilot-fusion
+kind: model-provider
+version: 0.1.0
+description: Standalone strict native-tool Copilot Fusion provider

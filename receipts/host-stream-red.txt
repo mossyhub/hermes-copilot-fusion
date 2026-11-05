@@ -1,0 +1,20 @@
+test_normal_discovery_declares_isolated_streaming_provider (test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider) ... FAIL
+
+======================================================================
+FAIL: test_normal_discovery_declares_isolated_streaming_provider (test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_provider.py", line 51, in test_normal_discovery_declares_isolated_streaming_provider
+    self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : Traceback (most recent call last):
+  File "<string>", line 16, in <module>
+    assert _should_stream(a), 'host streaming gate must honor the plugin without a patch'
+           ~~~~~~~~~~~~~~^^^
+AssertionError: host streaming gate must honor the plugin without a patch
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.882s
+
+FAILED (failures=1)

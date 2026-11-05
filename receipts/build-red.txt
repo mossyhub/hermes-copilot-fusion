@@ -1,0 +1,16 @@
+test_build_is_reproducible_manifest_bound_and_contains_actual_private_transport (test_build.BuildTests.test_build_is_reproducible_manifest_bound_and_contains_actual_private_transport) ... FAIL
+
+======================================================================
+FAIL: test_build_is_reproducible_manifest_bound_and_contains_actual_private_transport (test_build.BuildTests.test_build_is_reproducible_manifest_bound_and_contains_actual_private_transport)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_build.py", line 18, in test_build_is_reproducible_manifest_bound_and_contains_actual_private_transport
+    self.assertEqual(0,result.returncode,result.stdout+result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : /app/venv/bin/python: can't open file '/hermes_work/fusion-validation/copilot-fusion-provider/scripts/build.py': [Errno 2] No such file or directory
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.174s
+
+FAILED (failures=1)

@@ -1,0 +1,18 @@
+test_catalog_lists_only_enabled_friendly_fusion_rows (test_native.NativeTests.test_catalog_lists_only_enabled_friendly_fusion_rows) ... ok
+test_followup_preserves_native_tool_call_and_result_identity (test_native.NativeTests.test_followup_preserves_native_tool_call_and_result_identity) ... FAIL
+test_native_roundtrip_owns_negotiation_without_core_hook (test_native.NativeTests.test_native_roundtrip_owns_negotiation_without_core_hook) ... ok
+test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) ... ok
+
+======================================================================
+FAIL: test_followup_preserves_native_tool_call_and_result_identity (test_native.NativeTests.test_followup_preserves_native_tool_call_and_result_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 109, in test_followup_preserves_native_tool_call_and_result_identity
+    self.assertIn(CALL['id'],prompt)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 'sdk/opaque Ω:01' not found in 'You are the active Copilot backend for Hermes. Use the registered native functions to request Hermes tools; their names are transport aliases. Hermes alone executes actions and handles approvals. A request ends this response and actual results arrive in the next conversation turn. Never claim an action ran before its actual Hermes result. Do not emit text tool-call tags or JSON instead of invoking a registered function.\n\nConversation transcript:\n\nTool:\nACTUAL_RESULT_SENTINEL\n\nContinue the conversation from the latest user request.'
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.389s
+
+FAILED (failures=1)

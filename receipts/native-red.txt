@@ -1,0 +1,18 @@
+test_native_roundtrip_owns_negotiation_without_core_hook (test_native.NativeTests.test_native_roundtrip_owns_negotiation_without_core_hook) ... FAIL
+
+======================================================================
+FAIL: test_native_roundtrip_owns_negotiation_without_core_hook (test_native.NativeTests.test_native_roundtrip_owns_negotiation_without_core_hook)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 85, in test_native_roundtrip_owns_negotiation_without_core_hook
+    process=NativeProcess(); client=self.client(process)
+                                    ~~~~~~~~~~~^^^^^^^^^
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 69, in client
+    self.assertIsNotNone(client, 'profile must construct its own native client')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : profile must construct its own native client
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (failures=1)

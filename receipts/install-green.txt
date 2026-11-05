@@ -1,0 +1,8 @@
+test_checksum_mismatch_leaves_no_partial_home (test_install.InstallTests.test_checksum_mismatch_leaves_no_partial_home) ... ok
+test_explicit_new_home_is_installed_and_existing_home_is_never_changed (test_install.InstallTests.test_explicit_new_home_is_installed_and_existing_home_is_never_changed) ... ok
+test_missing_relative_default_and_active_home_targets_are_rejected (test_install.InstallTests.test_missing_relative_default_and_active_home_targets_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.233s
+
+OK

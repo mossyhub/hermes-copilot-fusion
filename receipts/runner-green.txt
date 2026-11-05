@@ -1,0 +1,6 @@
+test_runner_records_executed_ids_and_rejects_empty_suites (test_runner.RunnerTests.test_runner_records_executed_ids_and_rejects_empty_suites) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.731s
+
+OK

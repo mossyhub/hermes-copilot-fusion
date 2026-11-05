@@ -1,0 +1,6 @@
+test_build_is_reproducible_manifest_bound_and_contains_actual_private_transport (test_build.BuildTests.test_build_is_reproducible_manifest_bound_and_contains_actual_private_transport) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.538s
+
+OK

@@ -1,0 +1,9 @@
+test_catalog_lists_only_enabled_friendly_fusion_rows (test_native.NativeTests.test_catalog_lists_only_enabled_friendly_fusion_rows) ... ok
+test_native_roundtrip_owns_negotiation_without_core_hook (test_native.NativeTests.test_native_roundtrip_owns_negotiation_without_core_hook) ... ok
+test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) ... ok
+test_normal_discovery_declares_isolated_streaming_provider (test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.238s
+
+OK

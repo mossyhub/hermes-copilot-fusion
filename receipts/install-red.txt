@@ -1,0 +1,28 @@
+test_checksum_mismatch_leaves_no_partial_home (test_install.InstallTests.test_checksum_mismatch_leaves_no_partial_home) ... FAIL
+test_explicit_new_home_is_installed_and_existing_home_is_never_changed (test_install.InstallTests.test_explicit_new_home_is_installed_and_existing_home_is_never_changed) ... FAIL
+test_missing_relative_default_and_active_home_targets_are_rejected (test_install.InstallTests.test_missing_relative_default_and_active_home_targets_are_rejected) ... ok
+
+======================================================================
+FAIL: test_checksum_mismatch_leaves_no_partial_home (test_install.InstallTests.test_checksum_mismatch_leaves_no_partial_home)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_install.py", line 36, in test_checksum_mismatch_leaves_no_partial_home
+    self.assertEqual(0,result.returncode,result.stdout+result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : /app/venv/bin/python: can't open file '/hermes_work/fusion-validation/copilot-fusion-provider/scripts/install.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_explicit_new_home_is_installed_and_existing_home_is_never_changed (test_install.InstallTests.test_explicit_new_home_is_installed_and_existing_home_is_never_changed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_install.py", line 19, in test_explicit_new_home_is_installed_and_existing_home_is_never_changed
+    self.assertEqual(0,result.returncode,result.stdout+result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : /app/venv/bin/python: can't open file '/hermes_work/fusion-validation/copilot-fusion-provider/scripts/install.py': [Errno 2] No such file or directory
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.583s
+
+FAILED (failures=2)

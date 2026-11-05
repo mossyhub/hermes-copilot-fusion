@@ -1,0 +1,8 @@
+test_catalog_lists_only_enabled_friendly_fusion_rows (test_native.NativeTests.test_catalog_lists_only_enabled_friendly_fusion_rows) ... ok
+test_native_roundtrip_owns_negotiation_without_core_hook (test_native.NativeTests.test_native_roundtrip_owns_negotiation_without_core_hook) ... ok
+test_normal_discovery_declares_isolated_streaming_provider (test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.148s
+
+OK

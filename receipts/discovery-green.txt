@@ -1,0 +1,6 @@
+test_normal_discovery_declares_isolated_streaming_provider (test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.440s
+
+OK

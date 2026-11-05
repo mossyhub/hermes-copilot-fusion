@@ -1,0 +1,6 @@
+test_native_roundtrip_owns_negotiation_without_core_hook (test_native.NativeTests.test_native_roundtrip_owns_negotiation_without_core_hook) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.318s
+
+OK

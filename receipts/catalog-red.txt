@@ -1,0 +1,18 @@
+test_catalog_lists_only_enabled_friendly_fusion_rows (test_native.NativeTests.test_catalog_lists_only_enabled_friendly_fusion_rows) ... FAIL
+test_native_roundtrip_owns_negotiation_without_core_hook (test_native.NativeTests.test_native_roundtrip_owns_negotiation_without_core_hook) ... ok
+
+======================================================================
+FAIL: test_catalog_lists_only_enabled_friendly_fusion_rows (test_native.NativeTests.test_catalog_lists_only_enabled_friendly_fusion_rows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 89, in test_catalog_lists_only_enabled_friendly_fusion_rows
+    self.assertEqual([{'id':'fusion-standard','label':'Fusion Standard'},
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      {'id':'fusion-high','label':'Fusion High'}],rows)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [{'id': 'fusion-standard', 'label': 'Fusi[56 chars]gh'}] != None
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.443s
+
+FAILED (failures=1)

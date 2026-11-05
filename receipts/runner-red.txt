@@ -1,0 +1,16 @@
+test_runner_records_executed_ids_and_rejects_empty_suites (test_runner.RunnerTests.test_runner_records_executed_ids_and_rejects_empty_suites) ... FAIL
+
+======================================================================
+FAIL: test_runner_records_executed_ids_and_rejects_empty_suites (test_runner.RunnerTests.test_runner_records_executed_ids_and_rejects_empty_suites)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_runner.py", line 15, in test_runner_records_executed_ids_and_rejects_empty_suites
+    self.assertEqual(expected,result.returncode,result.stdout+result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : /app/venv/bin/python: can't open file '/hermes_work/fusion-validation/copilot-fusion-provider/scripts/test.py': [Errno 2] No such file or directory
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.107s
+
+FAILED (failures=1)

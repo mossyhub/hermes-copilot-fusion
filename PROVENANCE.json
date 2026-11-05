@@ -1,0 +1,27 @@
+{
+  "sources": {
+    "fusion/transport.py": {
+      "reference": "/hermes_work/fusion-validation/acp_client_upstream.py",
+      "sha256": "d3d301e46779761dc97693cd8b9526abff1a936cb7761405f9a26428016e7277"
+    },
+    "fusion/openai_bridge.py": {
+      "reference": "/home/hermeswebui/.hermes/hermes-agent/agent/acp_openai_bridge.py",
+      "sha256": "3ba2debcb1f30660f900f938fc9d124f4ed01a2e08c37e4486eeb95462dae37f"
+    },
+    "fusion/client.py": {
+      "reference": "/hermes_work/fusion-validation/hermes-labs-plugins/github-copilot/copilot_acp/client.py",
+      "sha256": "31c541fc9964a943a91b6a2e0fe28655dea3c450641caee8232f1dcec9125cdd"
+    }
+  },
+  "bridge": {
+    "commit": "4cecc41f71a36ff124f32c720736fc80e6473b3e",
+    "sha256": "b3a2fa65f572846e3159bbc1d2abae4458c04b22eb157f4b2590a67d38c24ad4",
+    "bundled": false
+  },
+  "candidate_read_only_probe": {
+    "core_generic_acp_sha256": "d3d301e46779761dc97693cd8b9526abff1a936cb7761405f9a26428016e7277",
+    "core_openai_bridge_sha256": "3ba2debcb1f30660f900f938fc9d124f4ed01a2e08c37e4486eeb95462dae37f",
+    "streaming_gate_rejects_acp_scheme": true,
+    "candidate_modified": false
+  }
+}

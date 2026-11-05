@@ -1,0 +1,6 @@
+test_catalog_and_streamed_native_inference_via_ordinary_discovery (test_blackbox.BlackboxTests.test_catalog_and_streamed_native_inference_via_ordinary_discovery) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.806s
+
+OK

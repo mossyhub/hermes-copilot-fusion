@@ -1,0 +1,68 @@
+test_catalog_lists_only_enabled_friendly_fusion_rows (test_native.NativeTests.test_catalog_lists_only_enabled_friendly_fusion_rows) ... ok
+test_native_roundtrip_owns_negotiation_without_core_hook (test_native.NativeTests.test_native_roundtrip_owns_negotiation_without_core_hook) ... ok
+test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) ... 
+  test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'require_native_tools': False}) ... FAIL
+  test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'forward_copilot_token': False}) ... FAIL
+  test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'args': ['--copilot-cli', 'copilot', '--hydrafusion']}) ... FAIL
+  test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'args': ['--copilot-cli', 'copilot', '--hydrafusion', '--hermes-tools-only', '--unsafe']}) ... FAIL
+  test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'acp_command': 'foreign-cli'}) ... FAIL
+  test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'acp_args': ['--unsafe']}) ... FAIL
+
+======================================================================
+FAIL: test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'require_native_tools': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 100, in test_strict_policy_cannot_be_disabled_or_launch_native_executor
+    with self.assertRaisesRegex((ValueError,RuntimeError),'strict|launch|native|override'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>) not raised
+
+======================================================================
+FAIL: test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'forward_copilot_token': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 100, in test_strict_policy_cannot_be_disabled_or_launch_native_executor
+    with self.assertRaisesRegex((ValueError,RuntimeError),'strict|launch|native|override'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>) not raised
+
+======================================================================
+FAIL: test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'args': ['--copilot-cli', 'copilot', '--hydrafusion']})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 100, in test_strict_policy_cannot_be_disabled_or_launch_native_executor
+    with self.assertRaisesRegex((ValueError,RuntimeError),'strict|launch|native|override'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>) not raised
+
+======================================================================
+FAIL: test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'args': ['--copilot-cli', 'copilot', '--hydrafusion', '--hermes-tools-only', '--unsafe']})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 100, in test_strict_policy_cannot_be_disabled_or_launch_native_executor
+    with self.assertRaisesRegex((ValueError,RuntimeError),'strict|launch|native|override'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>) not raised
+
+======================================================================
+FAIL: test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'acp_command': 'foreign-cli'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 100, in test_strict_policy_cannot_be_disabled_or_launch_native_executor
+    with self.assertRaisesRegex((ValueError,RuntimeError),'strict|launch|native|override'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>) not raised
+
+======================================================================
+FAIL: test_strict_policy_cannot_be_disabled_or_launch_native_executor (test_native.NativeTests.test_strict_policy_cannot_be_disabled_or_launch_native_executor) (overrides={'acp_args': ['--unsafe']})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/hermes_work/fusion-validation/copilot-fusion-provider/tests/test_native.py", line 100, in test_strict_policy_cannot_be_disabled_or_launch_native_executor
+    with self.assertRaisesRegex((ValueError,RuntimeError),'strict|launch|native|override'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>) not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.387s
+
+FAILED (failures=6)
