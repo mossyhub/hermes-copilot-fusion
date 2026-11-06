@@ -5,6 +5,9 @@ from pathlib import Path
 
 
 class FusionProfile(ProviderProfile):
+    def get_model_context_length(self, model):
+        return self.model_capabilities.get(model, {}).get('context_window')
+
     def discover_models(self, **kwargs):
         client = self.create_client(**kwargs)
         try:
@@ -37,6 +40,10 @@ profile = FusionProfile(
     description='Fusion orchestration; Hermes owns all tools and approvals',
     auth_type='external_process', base_url='fusion://copilot',
     supports_streaming=True, supports_vision=True,
+    # Conservative Hermes admission/compression ceiling observed on Standard,
+    # not a claim about any native solver's larger window or other tiers.
+    # Native prompt-budget refusals remain authoritative and can lower it.
+    model_capabilities={'fusion-standard': {'context_window': 200000}},
     supports_health_check=False, supports_model_listing=False,
     process_command=str(_local_bridge) if _local_bridge.is_file() else 'weave-copilot',
     process_args=('--copilot-cli', str(_local_cli) if _local_cli.is_file() else 'copilot', '--hydrafusion', '--hermes-tools-only'),

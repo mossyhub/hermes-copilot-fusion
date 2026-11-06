@@ -17,6 +17,8 @@ class BuildTests(unittest.TestCase):
                 result=subprocess.run([sys.executable,str(ROOT/'scripts/build.py'),'--output',str(output)],capture_output=True,text=True)
                 self.assertEqual(0,result.returncode,result.stdout+result.stderr)
                 receipt=json.loads((output/'manifest.json').read_text())
+                declared=next(line.split(':',1)[1].strip() for line in (ROOT/'plugin.yaml').read_text().splitlines() if line.startswith('version:'))
+                self.assertEqual('copilot-fusion-provider-'+declared+'.tar.gz',receipt['package'])
                 archive=output/receipt['package']
                 self.assertEqual(receipt['sha256'],hashlib.sha256(archive.read_bytes()).hexdigest())
                 hashes.append(receipt['sha256'])

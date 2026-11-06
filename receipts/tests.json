@@ -4,20 +4,21 @@
   "failures": 0,
   "inputs": {
     "fusion/__init__.py": "f71cdbb81846de5e2a6291c8e9828b3d12df4e65121ea166a9d2ebf0183b5217",
-    "fusion/client.py": "57ac945a285fde2002dd9a7137e6099543734897eb62a0f8107c99c430c2999f",
+    "fusion/client.py": "47c2f6611df79c3ad4b7c7bc22114269db1d1ec4838a6355cede7b1022864ab7",
     "fusion/openai_bridge.py": "b82187a6a252aea69943329bbded0e670daab6dd101534df559bfd5bbe537c27",
     "fusion/transport.py": "7291477967e34d6b35cf1f005125ab9eb2805d9598965b03b3c53c9f8a8a3c15",
-    "scripts/build.py": "e31d88f8cf8a6ad888325e0694bc966d34bad3fc674642a6062c1e92da54f9e5",
+    "scripts/build.py": "577db19a61e988e0bba72182f94fa0483496d79d188489571ac60464886ad567",
     "scripts/install.py": "a0bb86005e8dd433e4e75c2a39a362caede23ed7bdb898227be28fd12003b36e",
     "scripts/probe.py": "68cb97fbd099f4e71a0acfc46ff8ff4f6457bc651aa08c416c1e55ad3f26c41a",
     "scripts/test.py": "f6d3bdd9fc721dd9bc5e27ab4c0578397dd5ddcf4038a32825bd03e99e9a849f",
     "tests/test_blackbox.py": "a339cf71b362da39a441a131458067d45fd4c959420e4148f9ae4e0e23b22b11",
-    "tests/test_build.py": "aa28d15f2127e8e5b5150c331bca94b132338ddbc363faa262b994a500aa46dd",
+    "tests/test_budget_errors.py": "313a91768deed16d71a8f18b7f83d262eb2647d63ea7b9c62dfadf1ca135b927",
+    "tests/test_build.py": "3a687ade908c252af9b92a537fd7ae5527138bc523c1f5add822ed0a778f5c6e",
     "tests/test_install.py": "f7223059f5096badaf62a3c72ac70746cbbd57d2ff6832bcd5fa79310d2e125f",
-    "tests/test_native.py": "488e49ea88c4ec0febce0bed48226124d51caa0ea4eefcbfed32567f8e1d4fcd",
+    "tests/test_native.py": "4db9715d243e15750a62e431635ba0220aabaa3e4bcc3787ecb5839a14eb1686",
     "tests/test_port_regressions.py": "887da231376a52733c20a5c1934ccf4806d1c4faeca8d66c39439f208ba035c9",
     "tests/test_protocol_isolation.py": "ad8ef0488210366015553a6fe68bba835c008b0dae395b47c90674f20e72edd0",
-    "tests/test_provider.py": "7d47fe1114bdae8c9b14c395a3dd1de2fbe82a91c6dd782b6efb2c577ee2224b",
+    "tests/test_provider.py": "e24d10d14af93b4cdca0a113a4dac0d4ab2738a6d4670fd87070345e19b9686b",
     "tests/test_runner.py": "aeaa20fce9ce455683f2fff7dd2973accd7616106a296e11c837e1e1a2e56c0a"
   },
   "python": "3.14.7 (main, Sep 19 2026, 01:01:59) [GCC 14.2.0]",
@@ -26,6 +27,12 @@
   "success": true,
   "test_ids": [
     "test_blackbox.BlackboxTests.test_catalog_and_streamed_native_inference_via_ordinary_discovery",
+    "test_budget_errors.BudgetErrorTests.test_explicit_authentication_refusal_keeps_login_advice",
+    "test_budget_errors.BudgetErrorTests.test_generic_rpc_execution_error_does_not_invent_login_advice",
+    "test_budget_errors.BudgetErrorTests.test_native_budget_refusal_enters_real_hermes_compression_recovery",
+    "test_budget_errors.BudgetErrorTests.test_native_stream_budget_error_reaps_exact_process_without_tool_intents",
+    "test_budget_errors.BudgetErrorTests.test_real_hermes_recovery_adopts_budget_and_restarts_compressed_history",
+    "test_budget_errors.BudgetErrorTests.test_unrelated_error_does_not_enter_context_recovery",
     "test_build.BuildTests.test_build_is_reproducible_manifest_bound_and_contains_actual_private_transport",
     "test_install.InstallTests.test_checksum_mismatch_leaves_no_partial_home",
     "test_install.InstallTests.test_explicit_new_home_is_installed_and_existing_home_is_never_changed",
@@ -70,5 +77,5 @@
     "test_provider.DiscoveryTests.test_normal_discovery_declares_isolated_streaming_provider",
     "test_runner.RunnerTests.test_runner_records_executed_ids_and_rejects_empty_suites"
   ],
-  "tests": 44
+  "tests": 50
 }

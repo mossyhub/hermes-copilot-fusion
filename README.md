@@ -1,4 +1,11 @@
-# Copilot Fusion provider (0.1.0)
+# Copilot Fusion provider (0.1.1)
+
+## Long-session recovery fix
+
+Standard now declares a conservative **200,000-token Hermes input/compression ceiling**, based on an observed native Standard prompt-budget refusal. This is a safety policy, not the selected solver's context window: native Thinking can report a larger window, and different Fusion phases can admit different prompt budgets. High/Max do not inherit an invented Standard limit. With Hermes's 80% compression threshold, Standard begins compression at 160,000 estimated tokens instead of the unknown-model fallback's 204,800. Explicit user overrides still take precedence.
+
+Native prompt-budget refusals are normalized into Hermes's existing context-overflow recovery while retaining the actual provider-reported limit. Hermes can adopt a lower admitted budget, compact, and retry with committed tool results intact. Generic bridge execution errors no longer append login advice without an explicit authentication signal. This remains bounded recovery; it cannot guarantee every future native phase's unknown budget or exact native preflight token counting.
+
 
 ## Install from GitHub
 
@@ -14,7 +21,7 @@ For a named profile use `hermes -p PROFILE plugins install mossyhub/hermes-copil
 
 Set `HERMES_FUSION_BRIDGE` and `HERMES_FUSION_ARGS` in the intended profile's environment using the absolute paths shown below, and configure that owner's `COPILOT_GITHUB_TOKEN` through supported private secret setup. No token belongs in Git or a shared command. Select provider `copilot-fusion`, model `fusion-standard` (or `fusion-high` / `fusion-max`) and base URL `fusion://copilot` through the usual model settings. Start a fresh session; the three Fusion rows appear when the live bridge catalog enables those aliases. Native model/context reports appear under **Processed → Thinking**. Auxiliary tasks are separate calls; configure them deliberately.
 
-The published v0.1.0 archive is the independently qualified original package, SHA-256 `3c92926ab5174fb209bfbbff6f477753e37c7a2ad1b83ade7f102f941cd3f0c9`, not a rebuild of this publication checkout. Runtime, scripts, tests, manifest and licenses are byte-identical to that archive; this README adds publication setup and the repository adds CI/publication metadata. See [publication provenance](https://github.com/mossyhub/hermes-copilot-fusion/blob/main/PUBLISHING.md). The archive's original README has an older separate bridge build reference; use the release and checksum above for the published Linux bridge.
+The historical v0.1.0 archive is the independently qualified original package, SHA-256 `3c92926ab5174fb209bfbbff6f477753e37c7a2ad1b83ade7f102f941cd3f0c9`. Its initial publication checkout had byte-identical runtime/scripts/tests, with added setup and CI metadata; this v0.1.1 checkout includes the long-session fixes above and is a new version, not that original artifact. See [publication provenance](https://github.com/mossyhub/hermes-copilot-fusion/blob/main/PUBLISHING.md). The original archive README has an older separate bridge build reference; use the release and checksum above for the published Linux bridge.
 
 ## Provider-only WebUI experience
 
@@ -134,7 +141,7 @@ HERMES_HOME="$NEW_HOME" hermes chat --provider copilot-fusion --model fusion-sta
 ```sh
 "$HERMES_PYTHON" "$PACKAGE/scripts/build.py"
 cd "$PACKAGE/dist"
-sha256sum -c copilot-fusion-provider-0.1.0.tar.gz.sha256
+sha256sum -c copilot-fusion-provider-0.1.1.tar.gz.sha256
 ```
 
 The deterministic archive contains the actual current private transport/OpenAI shape library, source/tests/docs/receipts and an internal `SHA256SUMS`; `dist/manifest.json` binds each packaged input plus the archive hash. No credentials, bridge/CLI binaries, core runtime hooks or WebUI assets are bundled. Vendored MIT attribution is in [THIRD_PARTY.md](THIRD_PARTY.md).

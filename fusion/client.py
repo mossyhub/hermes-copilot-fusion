@@ -471,6 +471,22 @@ class CopilotACPClient(ACPClient):
         "Either install a CLI that ships with --acp support (e.g. `@github/copilot` late 2025+), or set "
         "HERMES_COPILOT_ACP_COMMAND / HERMES_COPILOT_ACP_ARGS to a working pair.")
 
+    def _request_error(self, method: str, err: Any) -> str:
+        message = str(err.get('message') or '') if isinstance(err, dict) else str(err)
+        # The SDK reports an INPUT budget after its own output reservation.
+        # Preserve its numeric limit and wording, while using the vocabulary
+        # Hermes already recognizes for bounded compression/retry recovery.
+        if "request exceeds the model's prompt budget" in message.lower():
+            return f"{self.label} {method} failed: Context length exceeded (Copilot prompt budget): {message}"
+        # This bridge also uses -32000 for ordinary SDK execution failures;
+        # the numeric code alone is not evidence that credentials are invalid.
+        if isinstance(err, dict) and err.get('code') == -32000:
+            auth_signals = ('authentication required', 'not authenticated', 'unauthorized',
+                            'not logged in', 'please log in', 'must log in', 'invalid token', 'expired token')
+            if not any(signal in message.lower() for signal in auth_signals):
+                return f"{self.label} {method} failed: {message or err}"
+        return super()._request_error(method, err)
+
     def _spawn(self):
         turn = _TURN.get()
         if turn is not None and turn.cancelled.is_set():
