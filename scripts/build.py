@@ -31,7 +31,11 @@ def build(output):
                 info.mtime=0; info.uid=info.gid=0; info.uname=info.gname=''
                 tar.addfile(info,io.BytesIO(data))
     output=Path(output); output.mkdir(parents=True,exist_ok=True)
-    package='copilot-fusion-provider-0.1.0.tar.gz'
+    declared=next(line.split(':',1)[1].strip() for line in (ROOT/'plugin.yaml').read_text().splitlines() if line.startswith('version:'))
+    # Version is package metadata, never an arbitrary archive pathname.
+    if not declared or any(c not in '0123456789.' for c in declared):
+        raise ValueError('plugin version must be a dotted numeric release')
+    package='copilot-fusion-provider-'+declared+'.tar.gz'
     data=buffer.getvalue(); digest=hashlib.sha256(data).hexdigest()
     (output/package).write_bytes(data)
     manifest={'package':package,'sha256':digest,'files':digests,'binaries_bundled':False}

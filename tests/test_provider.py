@@ -69,7 +69,12 @@ assert p.supports_vision is True
 assert p.name=='copilot-fusion' and not p.aliases
 baseline=json.loads(os.environ['FUSION_TEST_PROVIDER_BASELINE'])
 assert {name:getattr(get_provider_profile(name),'name',None) for name in baseline}==baseline, 'plugin changed an existing provider or added a sibling alias'
-assert p.get_model_context_length('fusion-standard') is None
+assert p.get_model_context_length('fusion-standard') == 200000, 'Standard needs an explicit conservative Hermes input ceiling'
+assert p.get_model_context_length('fusion-high') is None and p.get_model_context_length('fusion-max') is None, 'do not invent unobserved tier limits'
+from agent.context_compressor import ContextCompressor
+compressor=ContextCompressor(model='fusion-standard',provider='copilot-fusion',base_url=p.base_url,threshold_percent=0.8)
+assert compressor.context_length==200000 and compressor.threshold_tokens==160000
+assert compressor.should_compress(prompt_tokens=200418), 'the real failed request estimate must now trigger proactive compression'
 assert p.process_args[-2:]==('--hydrafusion','--hermes-tools-only')
 from types import SimpleNamespace
 from agent.turn_api_call import _should_stream

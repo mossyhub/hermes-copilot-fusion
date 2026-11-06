@@ -21,7 +21,7 @@ CALL = {'id':'sdk/opaque Ω:01','name':'terminal','arguments':{'command':"printf
 
 class NativeProcess:
     def __init__(self, *, capability=1, ack=1, version=1, calls=None, text='', stop='end_turn', images=True,
-                 hang=False, models=None, selected=None, events=()):
+                 hang=False, models=None, selected=None, events=(), prompt_error=None):
         self.inbox=queue.Queue(); self.exited=threading.Event(); self.initialized=threading.Event()
         self.sent=[]; self.returncode=None; self.stderr=io.StringIO(); self.terminations=0
         self.models=models or ['fusion-standard','fusion-high','fusion-max']
@@ -34,6 +34,9 @@ class NativeProcess:
                 if method=='initialize':
                     process.initialized.set()
                 if hang: return size
+                if method=='session/prompt' and prompt_error is not None:
+                    process.inbox.put(json.dumps({'id':request['id'],'error':prompt_error})+'\n')
+                    return size
                 catalog={'currentModelId':selected or request['params'].get('modelId','fusion-standard'),
                     'availableModels':[{'modelId':m,'name':m} for m in process.models]}
                 reply={'initialize':{'agentCapabilities':{'promptCapabilities':{'image':images}},
